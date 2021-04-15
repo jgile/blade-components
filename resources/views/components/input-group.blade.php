@@ -1,4 +1,4 @@
-<div {{ $attributes->merge(['class' => 'mt-2']) }}>
+<div {{ $attributes }}>
     @if($label)
         <x-blade-components::label :for="$for" :value="$label"/>
     @endif
