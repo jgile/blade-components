@@ -1,0 +1,46 @@
+{
+    "name": "jgile/blade-components",
+    "description": "Blade Components",
+    "authors": [
+        {
+            "name": "John Gile",
+            "email": "me@jgile.com"
+        }
+    ],
+    "homepage": "https://github.com/jgile/blade-components",
+    "type": "laravel",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.4|^8.0",
+        "spatie/laravel-package-tools": "^1.4.3",
+        "illuminate/contracts": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.15",
+        "pestphp/pest": "^1.0",
+        "phpunit/phpunit": "^9.3",
+        "spatie/laravel-ray": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "JGile\\BladeComponents\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JGile\\BladeComponents\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JGile\\BladeComponents\\BladeComponentsServiceProvider"
+            ]
+        }
+    }
+}

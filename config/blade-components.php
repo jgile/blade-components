@@ -1,0 +1,65 @@
+<?php
+
+return [
+    /*
+     * Component prefix - default is none.
+     * 'foo' would result in components like <x-foo-badge></x-foo-badge>
+     */
+    'prefix' => '',
+    'variant_prefix' => 'v',
+
+    /*
+     * Component config
+     */
+    'components' => [
+        'button' => [
+            'variants' => [
+                'xs' => 'px-2 py-0 text-xs rounded',
+                'sm' => 'px-3 py-1 text-xs leading-4 rounded-md',
+                'md' => 'px-6 py-2 text-xs rounded-lg',
+                'lg' => 'px-8 py-3 text-sm rounded-lg',
+                'xl' => 'px-10 py-3 text-md rounded-lg',
+                'red' => 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-300',
+                'green' => 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-300',
+                'gray' => 'bg-gray-300 text-black hover:bg-gray-400 focus:ring-gray-300',
+            ],
+            'default_variant' => ['md', 'gray'],
+            'variant_base' => 'inline-flex items-center border border-transparent shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2',
+        ],
+        'badge' => [
+            'variants' => [
+                'red' => 'bg-red-100 text-red-800',
+                'green' => 'bg-green-100 text-green-800',
+                'gray' => 'bg-gray-100 text-gray-800',
+            ],
+            'variant_base' => 'px-2 inline-flex text-xs leading-5 font-semibold rounded-full'
+        ],
+        'input' => [
+            'variant_base' => 'w-full bg-white block rounded-md border-gray-300 border box-border cursor-text text-base leading-normal shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
+            'default_variant' => 'md',
+            'variants' => [
+                'sm' => 'm-0 p-1 text-base',
+                'md' => 'mx-0 mb-0 mt-1 py-2 text-base',
+                'lg' => 'mx-0 mb-0 mt-1 py-2 text-xl leading-normal',
+            ]
+        ],
+        'select' => [
+            'variant_base' => 'bg-white cursor-pointer block rounded-md border-gray-300 border box-border leading-normal shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
+            'default_variant' => 'md',
+            'variants' => [
+                'sm' => 'mx-0 mb-0 mt-1 py-1 pl-2 pr-5 text-sm',
+                'md' => 'mx-0 mb-0 mt-1 py-2 pl-3 pr-10 text-base',
+                'lg' => 'mx-0 mb-0 mt-1 py-2 pl-3 pr-10 text-base',
+            ]
+        ],
+        'radio' => [
+            'variant_base' => 'focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300',
+        ],
+        'checkbox' => [
+            'variant_base' => 'focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded'
+        ],
+        'textarea' => [
+            'variant_base' => 'bg-white block rounded-md border-gray-300 border box-border mx-0 mb-0 mt-1 py-2 px-3 cursor-text text-base leading-normal shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
+        ],
+    ]
+];
