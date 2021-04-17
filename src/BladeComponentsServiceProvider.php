@@ -54,6 +54,7 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 Label::class,
                 NumberStep::class,
                 Radio::class,
+                Select2::class,
                 Select::class,
                 Textarea::class,
                 Toggle::class,
