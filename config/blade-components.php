@@ -45,12 +45,17 @@ return [
             'base' => 'px-2 inline-flex text-xs leading-5 font-semibold rounded-full'
         ],
         'input' => [
-            'base' => 'w-full bg-white block rounded-md border-gray-300 border box-border cursor-text text-base leading-normal shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
-            'default_variant' => 'md',
+            'base' => 'w-full bg-white block rounded-md border-gray-300 border box-border cursor-text leading-normal shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
+            'default_variant' => 'size.md',
             'variants' => [
-                'sm' => 'p-1 text-base',
-                'md' => 'p-2 text-base',
-                'lg' => 'p-2 text-xl leading-normal'
+                'size' => [
+                    'sm' => 'p-1 text-base',
+                    'md' => 'p-2 text-base',
+                    'lg' => 'p-2 text-xl leading-normal',
+                ],
+                'state' => [
+                    'error' => 'border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500'
+                ]
             ]
         ],
         'select' => [

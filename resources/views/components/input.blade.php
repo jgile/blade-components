@@ -13,5 +13,5 @@
         @endisset
     </div>
 @else
-    <input name="{{ $name }}" {{ $attributes->mergeVariantIf($errors->has($name),'error') }} />
+    <input name="{{ $name }}" {{ $attributes->mergeVariantIf($errors->has($name),'state.error') }} />
 @endif
