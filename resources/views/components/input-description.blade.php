@@ -1,1 +1,1 @@
-<p {{ $attributes }}>{{ $message }}</p>
+<p {{ $attributes }}>{{ $slot }}</p>
