@@ -1,4 +1,3 @@
-@props(['value'])
-<label {{ $attributes->merge(['class' => config('blade-components.classes.label')]) }}>
+<label {{ $attributes }}>
     {{ $value ?? $slot }}
 </label>

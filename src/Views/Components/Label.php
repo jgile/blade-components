@@ -2,11 +2,13 @@
 
 namespace JGile\BladeComponents\Views\Components;
 
-use Illuminate\Support\Str;
 use Illuminate\View\Component;
+use JGile\BladeComponents\Traits\HasVariants;
 
 class Label extends Component
 {
+    use HasVariants;
+
     public $for;
     public $value;
 
@@ -20,11 +22,6 @@ class Label extends Component
     {
         $this->for = $for;
         $this->value = $value;
-    }
-
-    public function fallback(): string
-    {
-        return Str::ucfirst(str_replace('_', ' ', $this->for));
     }
 
     public function render()

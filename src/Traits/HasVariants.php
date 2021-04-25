@@ -85,7 +85,7 @@ trait HasVariants
             return $this->variantBase;
         }
 
-        return $this->variantConfig('variant_base', '');
+        return $this->variantConfig('base', '');
     }
 
     /**
