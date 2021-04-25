@@ -13,6 +13,6 @@
         </x-blade-components::input-description>
     @endif
     @if($for)
-        <x-blade-components::input-errors :for="$for"/>
+        <x-blade-components::input-errors :for="$validate"/>
     @endif
 </div>

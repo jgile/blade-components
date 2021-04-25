@@ -6,15 +6,15 @@ use Illuminate\View\Component;
 
 class InputGroup extends Component
 {
+    public $for;
     public $label;
     public $validate;
-    public $for;
 
-    public function __construct($label = null, $validate = null, $for = null)
+    public function __construct($for = null, $label = null, $validate = null)
     {
-        $this->label = $label;
-        $this->validate = $validate;
         $this->for = $for;
+        $this->validate = $validate === null ? $for : $validate;
+        $this->label = $label;
     }
 
     public function render()
