@@ -8,6 +8,7 @@ use JGile\BladeComponents\Views\Components\Card;
 use JGile\BladeComponents\Views\Components\Checkbox;
 use JGile\BladeComponents\Views\Components\DatePicker;
 use JGile\BladeComponents\Views\Components\Input;
+use JGile\BladeComponents\Views\Components\InputDescription;
 use JGile\BladeComponents\Views\Components\InputGroup;
 use JGile\BladeComponents\Views\Components\Label;
 use JGile\BladeComponents\Views\Components\MediaItem;
@@ -24,7 +25,7 @@ use JGile\BladeComponents\Views\Components\Th;
 use JGile\BladeComponents\Views\Components\Tr;
 use JGile\BladeComponents\Views\Components\Textarea;
 use JGile\BladeComponents\Views\Components\Toggle;
-use JGile\BladeComponents\Views\Components\ValidationError;
+use JGile\BladeComponents\Views\Components\InputErrors;
 use JGile\BladeComponents\Views\Components\ValidationErrors;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -54,12 +55,12 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 Label::class,
                 NumberStep::class,
                 Radio::class,
-                Select2::class,
                 Select::class,
                 Textarea::class,
                 Toggle::class,
                 ValidationErrors::class,
-                ValidationError::class,
+                InputDescription::class,
+                InputErrors::class,
                 Stack::class,
                 MediaItem::class,
                 StackItem::class,

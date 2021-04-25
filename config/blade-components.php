@@ -79,6 +79,9 @@ return [
         ],
         'validation_errors' => [
             'base' => 'text-xs text-red-600'
+        ],
+        'input-errors' => [
+            'base' => 'mt-2 text-sm text-red-600'
         ]
     ]
 ];

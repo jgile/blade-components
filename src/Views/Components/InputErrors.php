@@ -3,9 +3,12 @@
 namespace JGile\BladeComponents\Views\Components;
 
 use Illuminate\View\Component;
+use JGile\BladeComponents\Traits\HasVariants;
 
-class ValidationError extends Component
+class InputErrors extends Component
 {
+    use HasVariants;
+
     public string $for;
 
     public function __construct($for)
@@ -15,6 +18,6 @@ class ValidationError extends Component
 
     public function render()
     {
-        return view("blade-components::components.validation-error");
+        return view("blade-components::components.input-errors");
     }
 }
