@@ -12,7 +12,7 @@
             {{ $description }}
         </x-blade-components::input-description>
     @endif
-    @if($for)
+    @if($validate)
         <x-blade-components::input-errors :for="$validate"/>
     @endif
 </div>
