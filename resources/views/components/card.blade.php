@@ -1,6 +1,5 @@
-@props(['flush' => false])
 <div class="bg-white sm:rounded-lg shadow overflow-hidden">
-    @isset($title)
+    @if($title)
         <div class="bg-white px-4 py-3 border-b border-gray-200 sm:px-6">
             <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
                 <div class="ml-4 mt-2">
@@ -15,7 +14,7 @@
                 @endisset
             </div>
         </div>
-    @endisset
+    @endif
     <div class="@if($flush) p-0 @else px-4 py-6 sm:p-6 @endif">
         {{ $slot }}
     </div>

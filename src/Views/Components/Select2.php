@@ -2,18 +2,12 @@
 
 namespace JGile\BladeComponents\Views\Components;
 
-use Illuminate\Contracts\View\View;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
-use JGile\BladeComponents\Traits\HasVariants;
 
 class Select2 extends Component
 {
-    use HasVariants;
-
-    protected $configKey = 'blade-components.components.select';
-
     /** @var string */
     public $name;
 
@@ -46,10 +40,6 @@ class Select2 extends Component
         $this->value = old($name, $value);
     }
 
-    /**
-     * @param $options
-     * @return array
-     */
     protected function resolveOptions($options)
     {
 
@@ -57,7 +47,7 @@ class Select2 extends Component
             if (Arr::isAssoc($options)) {
                 return collect($options)->map(function ($label, $value) {
                     return ['value' => $value, 'label' => $label];
-                })->sortBy('label')->toArray();
+                })->sortBy('label')->values()->toArray();
             }
 
             return $options;
@@ -73,17 +63,19 @@ class Select2 extends Component
                     ];
                 })
                 ->sortBy('label')
+                ->values()
                 ->toArray();
         }
     }
 
+
     /**
      * Get the view / contents that represent the component.
      *
-     * @return View|string
+     * @return \Illuminate\View\View|string
      */
     public function render()
     {
-        return view("blade-components::components.select");
+        return view("blade-components::components.select2");
     }
 }

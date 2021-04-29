@@ -12,12 +12,12 @@ use JGile\BladeComponents\Views\Components\InputDescription;
 use JGile\BladeComponents\Views\Components\InputGroup;
 use JGile\BladeComponents\Views\Components\Label;
 use JGile\BladeComponents\Views\Components\MediaItem;
-use JGile\BladeComponents\Views\Components\Nav;
 use JGile\BladeComponents\Views\Components\NumberStep;
 use JGile\BladeComponents\Views\Components\Quill;
 use JGile\BladeComponents\Views\Components\QuillContent;
 use JGile\BladeComponents\Views\Components\Radio;
 use JGile\BladeComponents\Views\Components\Select;
+use JGile\BladeComponents\Views\Components\Select2;
 use JGile\BladeComponents\Views\Components\Stack;
 use JGile\BladeComponents\Views\Components\StackItem;
 use JGile\BladeComponents\Views\Components\Table;
@@ -42,7 +42,6 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->sharesDataWithAllViews('bladeComponentsPrefix', $prefix)
             ->hasViewComponents(config('blade-components.prefix', ''), ...[
-                Nav::class,
                 Table::class,
                 Tr::class,
                 Th::class,
@@ -58,6 +57,7 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 NumberStep::class,
                 Radio::class,
                 Select::class,
+                Select2::class,
                 Textarea::class,
                 Toggle::class,
                 ValidationErrors::class,
