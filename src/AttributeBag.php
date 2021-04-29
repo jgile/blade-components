@@ -39,6 +39,22 @@ class AttributeBag extends ComponentAttributeBag
         return parent::merge($attributeDefaults, $escape);
     }
 
+    public function mergeVariantIf($condition, $variants)
+    {
+        if ($condition) {
+            $this->mergeVariant($variants);
+        }
+
+        return $this;
+    }
+
+    public function mergeVariant($variants)
+    {
+        $this->setAttributes(['variant' => $variants]);
+
+        return $this;
+    }
+
     public function resolveVariantAttributes(array $attributes)
     {
         $variantPrefix = config('blade-components.variant_prefix') . '-';

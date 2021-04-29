@@ -5,7 +5,7 @@
                 {{ $prefix }}
             </div>
         @endisset
-        <input {{ $attributes }} />
+        <input  name="{{ $name }}" {{ $attributes }} />
         @isset($suffix)
             <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                 {{ $suffix }}
@@ -13,5 +13,5 @@
         @endisset
     </div>
 @else
-    <input {{ $attributes }} />
+    <input name="{{ $name }}" {{ $attributes->mergeVariantIf($errors->has($name),'state.error') }} />
 @endif

@@ -1,9 +1,18 @@
 <div {{ $attributes }}>
     @if($label)
-        <x-blade-components::label :for="$for" :value="$label"/>
+        <x-label :for="$for">
+            {{ $label }}
+        </x-label>
     @endif
-    {{ $slot }}
+    <div class="mt-1">
+        {{ $slot }}
+    </div>
+    @if($description)
+        <x-input-description>
+            {{ $description }}
+        </x-input-description>
+    @endif
     @if($validate)
-        <x-blade-components::validation-error class="mt-1" :for="$validate"/>
+        <x-input-errors :for="$validate"/>
     @endif
 </div>

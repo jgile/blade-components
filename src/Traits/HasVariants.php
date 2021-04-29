@@ -43,7 +43,7 @@ trait HasVariants
             return $this->configKey;
         }
 
-        return (string)Str::of(get_class($this))->afterLast('\\')->lower()->prepend("blade-components.components.");
+        return (string)Str::of(get_class($this))->afterLast('\\')->kebab()->lower()->prepend("blade-components.components.");
     }
 
     /**
@@ -85,7 +85,7 @@ trait HasVariants
             return $this->variantBase;
         }
 
-        return $this->variantConfig('variant_base', '');
+        return $this->variantConfig('base', '');
     }
 
     /**
