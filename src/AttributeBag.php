@@ -61,14 +61,6 @@ class AttributeBag extends ComponentAttributeBag
         $variants = collect();
         $classes = $this->baseVariant ?? '';
 
-        if ($this->defaultVariant !== null) {
-            foreach (Arr::wrap($this->defaultVariant) as $defaultVariantKey) {
-                $variant = (string)Str::of($defaultVariantKey)->replace('-', '.');
-                $prefix = (string)Str::of($defaultVariantKey)->before('.');
-                $variants->put($prefix === $variant ? 'variant' : $prefix, (string)$variant);
-            }
-        }
-
         $variants = collect($variants)->merge(collect($attributes)
             ->filter(function ($value, $key) use ($variantPrefix) {
                 return ($key === 'variant') || ($value && Str::of($key)->startsWith($variantPrefix));
@@ -78,18 +70,40 @@ class AttributeBag extends ComponentAttributeBag
                     foreach (Arr::wrap($value) as $item) {
                         $variant = (string)Str::of($item)->replace('-', '.');
                         $prefix = (string)Str::of($item)->replace('-', '.')->before('.');
-                        $collection->put($prefix === $variant ? 'variant' : $prefix, (string)$variant);
+                        if ($prefix === $variant) {
+                            $collection->push((string)$variant);
+                        } else {
+                            $collection->put($prefix, (string)$variant);
+                        }
                     }
                 } else {
                     $variant = (string)Str::of($attribute)->ltrim($variantPrefix)->replace('-', '.');
                     $prefix = (string)Str::of($attribute)->ltrim($variantPrefix)->replace('-', '.')->before('.');
-                    $collection->put($prefix === $variant ? 'variant' : $prefix, (string)$variant);
+                    if ($prefix === $variant) {
+                        $collection->push((string)$variant);
+                    } else {
+                        $collection->put($prefix, (string)$variant);
+                    }
                 }
 
                 unset($attributes[$attribute]);
 
                 return $collection;
             }, new Collection()));
+
+        if (!$variants->count()) {
+            if ($this->defaultVariant !== null) {
+                foreach (Arr::wrap($this->defaultVariant) as $defaultVariantKey) {
+                    $variant = (string)Str::of($defaultVariantKey)->replace('-', '.');
+                    $prefix = (string)Str::of($defaultVariantKey)->before('.');
+                    if ($prefix === $variant) {
+                        $variants->push((string)$variant);
+                    } else {
+                        $variants->put($prefix, (string)$variant);
+                    }
+                }
+            }
+        }
 
         $classes .= ' ' . $variants->map(function ($value) {
                 return Arr::get($this->variants, $value);

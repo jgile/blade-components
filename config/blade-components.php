@@ -87,6 +87,9 @@ return [
         ],
         'input-errors' => [
             'base' => 'mt-2 text-sm text-red-600'
+        ],
+        'input-description' => [
+            'base' => 'mt-1 text-sm text-gray-500'
         ]
     ]
 ];
