@@ -18,6 +18,7 @@ use JGile\BladeComponents\Views\Components\QuillContent;
 use JGile\BladeComponents\Views\Components\Radio;
 use JGile\BladeComponents\Views\Components\Select;
 use JGile\BladeComponents\Views\Components\Select2;
+use JGile\BladeComponents\Views\Components\Spinner;
 use JGile\BladeComponents\Views\Components\Stack;
 use JGile\BladeComponents\Views\Components\StackItem;
 use JGile\BladeComponents\Views\Components\Table;
@@ -42,6 +43,7 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->sharesDataWithAllViews('bladeComponentsPrefix', $prefix)
             ->hasViewComponents(config('blade-components.prefix', ''), ...[
+                Spinner::class,
                 Table::class,
                 Tr::class,
                 Th::class,

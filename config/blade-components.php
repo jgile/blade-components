@@ -90,6 +90,9 @@ return [
         ],
         'input-description' => [
             'base' => 'mt-1 text-sm text-gray-500'
+        ],
+        'spinner' => [
+            'base' => 'far fa-spinner fa-spin'
         ]
     ]
 ];
