@@ -50,7 +50,8 @@ class AttributeBag extends ComponentAttributeBag
 
     public function mergeVariant($variants)
     {
-        $this->setAttributes(['variant' => $variants]);
+        $currentVariants = Arr::get($this->attributes, 'variant', []);
+        $this->setAttributes(array_merge($currentVariants, ['variant' => $variants]));
 
         return $this;
     }
