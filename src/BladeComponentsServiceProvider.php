@@ -2,6 +2,8 @@
 
 namespace JGile\BladeComponents;
 
+use Closure;
+use Illuminate\Support\Facades\Blade;
 use JGile\BladeComponents\Views\Components\Badge;
 use JGile\BladeComponents\Views\Components\Button;
 use JGile\BladeComponents\Views\Components\Card;
@@ -71,5 +73,16 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 Quill::class,
                 QuillContent::class,
             ]);
+    }
+
+    public function bootingPackage()
+    {
+        $this->app->singleton(VariantsManager::class, function () {
+            return new VariantsManager();
+        });
+
+        Blade::directive('variant', function ($expression) {
+            return "<?php echo app(\JGile\BladeComponents\VariantsManager::class)->get($expression); ?>";
+        });
     }
 }

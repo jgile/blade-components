@@ -12,6 +12,15 @@ return [
      * Component config
      */
     'components' => [
+        'dummy' => [
+            'variants' => [
+                'a' => '1',
+                'b' => '2',
+                'c' => '3',
+            ],
+            'default_variant' => ['a', 'c'],
+            'base' => 'b'
+        ],
         'button' => [
             'variants' => [
                 'secondary' => 'px-6 py-3 text-xs rounded-lg bg-gray-300 text-black hover:bg-gray-400 focus:ring-gray-300 disabled:opacity-50',
@@ -30,6 +39,7 @@ return [
                 'purple' => 'bg-purple-light text-black hover:bg-purple-400 focus:ring disabled:opacity-50',
                 'black' => 'bg-black text-white hover:bg-gray-dark focus:ring disabled:opacity-50',
                 'link' => 'bg-transparent text-inherit hover:underline focus:underline disabled:opacity-50',
+
             ],
             'default_variant' => ['md', 'gray'],
             'base' => 'overflow-hidden relative inline-flex items-center justify-center font-bold border border-transparent shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2',

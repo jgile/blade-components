@@ -29,9 +29,8 @@ class Select2 extends Component
     /** @var bool */
     public $allow_empty;
 
-    public function __construct(string $name, $variant = null, string $id = null, string $value = null, $options = null, string $placeholder = null, bool $allowEmpty = false)
+    public function __construct(string $name, string $id = null, string $value = null, $options = null, string $placeholder = null, bool $allowEmpty = false)
     {
-        $this->variant = $variant;
         $this->placeholder = $placeholder;
         $this->options = $this->resolveOptions($options);
         $this->name = $name;
@@ -42,11 +41,18 @@ class Select2 extends Component
 
     protected function resolveOptions($options)
     {
-
         if (is_array($options)) {
-            if (Arr::isAssoc($options)) {
+
+            $isAssoc = Arr::isAssoc($options);
+            if ($isAssoc) {
                 return collect($options)->map(function ($label, $value) {
                     return ['value' => $value, 'label' => $label];
+                })->sortBy('label')->values()->toArray();
+            }
+
+            if (!$isAssoc && !is_array($options[0])) {
+                return collect($options)->map(function ($value) {
+                    return ['value' => $value, 'label' => $value];
                 })->sortBy('label')->values()->toArray();
             }
 
@@ -66,6 +72,7 @@ class Select2 extends Component
                 ->values()
                 ->toArray();
         }
+
     }
 
 
