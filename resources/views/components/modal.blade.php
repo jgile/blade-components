@@ -1,3 +1,23 @@
+@php
+    switch ($maxWidth ?? '2xl') {
+        case 'sm':
+            $maxWidth = 'sm:max-w-sm';
+            break;
+        case 'md':
+            $maxWidth = 'sm:max-w-md';
+            break;
+        case 'lg':
+            $maxWidth = 'sm:max-w-lg';
+            break;
+        case 'xl':
+            $maxWidth = 'sm:max-w-xl';
+            break;
+        case '2xl':
+        default:
+            $maxWidth = 'sm:max-w-2xl';
+            break;
+    }
+@endphp
 <div
     x-data="{
         show: false,
@@ -18,7 +38,7 @@
     x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()"
     x-on:keydown.shift.tab.prevent="prevFocusable().focus()"
     x-show="show"
-    class="fixed top-0 inset-x-0 px-4 pt-6 z-40 sm:px-0 sm:flex sm:items-top sm:justify-center {{ $center ? 'bottom-0' : '' }}"
+    class="fixed top-0 inset-x-0 px-4 pt-6 z-40 sm:px-0 sm:flex sm:items-top sm:justify-center {{ $center ? 'bottom-0 items-0' : '' }}"
     style="display: none;"
 >
     <div
