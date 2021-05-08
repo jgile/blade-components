@@ -15,6 +15,7 @@ use JGile\BladeComponents\Views\Components\InputDescription;
 use JGile\BladeComponents\Views\Components\InputGroup;
 use JGile\BladeComponents\Views\Components\Label;
 use JGile\BladeComponents\Views\Components\MediaItem;
+use JGile\BladeComponents\Views\Components\Modal;
 use JGile\BladeComponents\Views\Components\NumberStep;
 use JGile\BladeComponents\Views\Components\Quill;
 use JGile\BladeComponents\Views\Components\QuillContent;
@@ -46,6 +47,7 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->sharesDataWithAllViews('bladeComponentsPrefix', $prefix)
             ->hasViewComponents(config('blade-components.prefix', ''), ...[
+                Modal::class,
                 Alert::class,
                 Spinner::class,
                 Table::class,
