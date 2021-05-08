@@ -12,14 +12,15 @@ return [
      * Component config
      */
     'components' => [
-        'dummy' => [
+        'alert' => [
             'variants' => [
-                'a' => '1',
-                'b' => '2',
-                'c' => '3',
+                'red' => 'bg-red-50 text-red-800',
+                'green' => 'bg-green-50 text-green-800',
+                'yellow' => 'bg-yellow-50 text-yellow-800',
+                'blue' => 'bg-blue-50 text-blue-800',
             ],
-            'default_variant' => ['a', 'c'],
-            'base' => 'b'
+            'default_variant' => 'red',
+            'base' => 'w-full rounded-md p-4'
         ],
         'button' => [
             'variants' => [

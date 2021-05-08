@@ -4,6 +4,7 @@ namespace JGile\BladeComponents;
 
 use Closure;
 use Illuminate\Support\Facades\Blade;
+use JGile\BladeComponents\Views\Components\Alert;
 use JGile\BladeComponents\Views\Components\Badge;
 use JGile\BladeComponents\Views\Components\Button;
 use JGile\BladeComponents\Views\Components\Card;
@@ -45,6 +46,7 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->sharesDataWithAllViews('bladeComponentsPrefix', $prefix)
             ->hasViewComponents(config('blade-components.prefix', ''), ...[
+                Alert::class,
                 Spinner::class,
                 Table::class,
                 Tr::class,
