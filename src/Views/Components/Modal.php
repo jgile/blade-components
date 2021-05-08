@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 class Modal extends Component
 {
     public $maxWidth;
-    public bool $center;
+    public bool $center = false;
 
     public function __construct($maxWidth = null, $center = false)
     {
