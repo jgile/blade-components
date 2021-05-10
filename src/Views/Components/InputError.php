@@ -18,6 +18,6 @@ class InputError extends Component
 
     public function render()
     {
-        return view("blade-components::components.input-errors");
+        return view("blade-components::components.input-error");
     }
 }

@@ -33,7 +33,6 @@ use JGile\BladeComponents\Views\Components\Th;
 use JGile\BladeComponents\Views\Components\Tr;
 use JGile\BladeComponents\Views\Components\Textarea;
 use JGile\BladeComponents\Views\Components\Toggle;
-use JGile\BladeComponents\Views\Components\InputErrors;
 use JGile\BladeComponents\Views\Components\ValidationErrors;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -63,6 +62,7 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 DatePicker::class,
                 Input::class,
                 InputGroup::class,
+                InputError::class,
                 Label::class,
                 NumberStep::class,
                 Radio::class,
@@ -72,7 +72,6 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 Toggle::class,
                 ValidationErrors::class,
                 InputDescription::class,
-                InputError::class,
                 Stack::class,
                 MediaItem::class,
                 StackItem::class,
