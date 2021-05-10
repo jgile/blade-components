@@ -13,6 +13,6 @@
         </x-input-description>
     @endif
     @if($validate)
-        <x-input-errors :for="$validate"/>
+        <x-input-error :for="$validate"/>
     @endif
 </div>
