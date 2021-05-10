@@ -94,7 +94,9 @@ class Component
         $class = array_combine($class, $class);
 
         if (empty($this->variants) && config("$this->configKey.default_variant")) {
-            $this->variants[] = config("$this->configKey.default_variant");
+            foreach (Arr::wrap(config("$this->configKey.default_variant")) as $var) {
+                $this->variants[$var] = $var;
+            }
         }
 
         foreach ($this->variants as $variant) {
