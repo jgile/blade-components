@@ -25,6 +25,11 @@ class Component
         $this->variant($variant);
     }
 
+    public static function make(string $component = null, $variant = [])
+    {
+        return new static($component, $variant);
+    }
+
     /**
      * Load a component variant.
      *
