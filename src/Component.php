@@ -29,12 +29,16 @@ class Component
      * Load a component variant.
      *
      * @param string $component
-     * @param string $variant
+     * @param string|array $variant
      */
-    public function load(string $component)
+    public function load(string $component, $variant = null)
     {
         $this->componentKey = $component;
         $this->configKey = "blade-components.components.$component";
+
+        if ($variant !== null) {
+            $this->variant($variant);
+        }
     }
 
     /**

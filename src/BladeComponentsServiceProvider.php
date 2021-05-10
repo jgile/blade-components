@@ -82,12 +82,12 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
 
     public function bootingPackage()
     {
-        $this->app->singleton(Variant::class, function () {
-            return new Variant();
+        $this->app->singleton(Component::class, function () {
+            return new Component();
         });
 
         Blade::directive('variant', function ($expression) {
-            return "<?php echo app(\JGile\BladeComponents\Variant::class)->get($expression); ?>";
+            return "<?php echo app(\JGile\BladeComponents\Component::class)->load($expression); ?>";
         });
     }
 }
