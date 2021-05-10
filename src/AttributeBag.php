@@ -109,6 +109,7 @@ class AttributeBag extends ComponentAttributeBag
             $this->component->mergeClasses($attributes['class']);
         }
 
+        unset($attributes['variant']);
         $attributes['class'] = $this->component->class();
 
         return $attributes;
