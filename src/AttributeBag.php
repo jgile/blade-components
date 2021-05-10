@@ -9,36 +9,75 @@ use Illuminate\View\ComponentAttributeBag;
 
 class AttributeBag extends ComponentAttributeBag
 {
-    protected $defaultVariant = null;
-    protected $baseVariant = '';
-    protected $variants = [];
+    protected Component $component;
 
-    public function __construct(array $attributes = [], string $baseVariant = '', array $variants = [], $defaultVariant = null)
+    /**
+     * AttributeBag constructor.
+     * @param array $attributes
+     * @param Variant $variantsManager
+     */
+    public function __construct(array $attributes = [], Component $component = null)
     {
+        if ($component) {
+            $this->component($component);
+        }
+
         parent::__construct($attributes);
-        $this->baseVariant = $baseVariant;
-        $this->variants = $variants;
-        $this->defaultVariant = $defaultVariant;
     }
 
+    /**
+     * Set the component.
+     *
+     * @param Component $component
+     */
+    public function component(Component $component)
+    {
+        $this->component = $component;
+
+        return $this;
+    }
+
+    /**
+     * Get variant attribute.
+     *
+     * @param string|null $key
+     * @return Application|Component|Repository|mixed|string|null
+     */
+    public function variant(string $key = null)
+    {
+        if ($key) {
+            return $this->component->get($key);
+        }
+
+        return $this->component;
+    }
+
+    /**
+     * Injects variant classes into attributes.
+     *
+     * @param array $attributes
+     */
     public function setAttributes(array $attributes)
     {
         parent::setAttributes($this->resolveVariantAttributes($attributes));
     }
 
-    public function merge(array $attributeDefaults = [], $escape = true)
+    /**
+     * @param $variants
+     * @return $this
+     */
+    public function mergeVariant($variants)
     {
-        if (isset($attributeDefaults['class'], $this->attributes['class'])) {
-            $this->attributes['class'] = (string)ClassCollection::make()
-                ->addClasses($attributeDefaults['class'])
-                ->addClasses($this->attributes['class']);
+        $this->setAttributes(array_merge($currentVariants, ['variant' => $variants]));
 
-            unset($attributeDefaults['class']);
-        }
-
-        return parent::merge($attributeDefaults, $escape);
+        return $this;
     }
 
+    /**
+     * @param $condition
+     * @param $variants
+     * @return $this
+     */
     public function mergeVariantIf($condition, $variants)
     {
         if ($condition) {
@@ -48,80 +87,29 @@ class AttributeBag extends ComponentAttributeBag
         return $this;
     }
 
-    public function mergeVariant($variants)
-    {
-        $currentVariants = Arr::get($this->attributes, 'variant', []);
-        $this->setAttributes(array_merge($currentVariants, ['variant' => $variants]));
-
-        return $this;
-    }
-
+    /**
+     * @param array $attributes
+     * @return array
+     */
     public function resolveVariantAttributes(array $attributes)
     {
         $variantPrefix = config('blade-components.variant_prefix') . '-';
-        $variants = collect();
-        $classes = $this->baseVariant ?? '';
 
-        $variants = collect($variants)->merge(collect($attributes)
-            ->filter(function ($value, $key) use ($variantPrefix) {
-                return ($key === 'variant') || ($value && Str::of($key)->startsWith($variantPrefix));
-            })
-            ->reduceWithKeys(function ($collection, $value, $attribute) use ($variantPrefix, &$attributes) {
-                if ($attribute === 'variant') {
-                    foreach (Arr::wrap($value) as $item) {
-                        $variant = (string)Str::of($item)->replace('-', '.');
-                        $prefix = (string)Str::of($item)->replace('-', '.')->before('.');
-                        if ($prefix === $variant) {
-                            $collection->push((string)$variant);
-                        } else {
-                            $collection->put($prefix, (string)$variant);
-                        }
-                    }
-                } else {
-                    $variant = (string)Str::of($attribute)->ltrim($variantPrefix)->replace('-', '.');
-                    $prefix = (string)Str::of($attribute)->ltrim($variantPrefix)->replace('-', '.')->before('.');
-                    if ($prefix === $variant) {
-                        $collection->push((string)$variant);
-                    } else {
-                        $collection->put($prefix, (string)$variant);
-                    }
+        foreach ($attributes as $key => $value) {
+            if ($key === 'variant') {
+                foreach (Arr::wrap($value) as $item) {
+                    $this->component->variant((string)Str::of($item)->replace('-', '.'));
                 }
-
-                unset($attributes[$attribute]);
-
-                return $collection;
-            }, new Collection()));
-
-        if (!$variants->count()) {
-            if ($this->defaultVariant !== null) {
-                foreach (Arr::wrap($this->defaultVariant) as $defaultVariantKey) {
-                    $variant = (string)Str::of($defaultVariantKey)->replace('-', '.');
-                    $prefix = (string)Str::of($defaultVariantKey)->before('.');
-                    if ($prefix === $variant) {
-                        $variants->push((string)$variant);
-                    } else {
-                        $variants->put($prefix, (string)$variant);
-                    }
-                }
+            } elseif ($value && Str::of($key)->startsWith($variantPrefix)) {
+                $this->component->variant((string)Str::of($key)->ltrim($variantPrefix)->replace('-', '.'));
             }
         }
 
-        $classes .= ' ' . $variants->map(function ($value) {
-                return Arr::get($this->variants, $value);
-            })->join(' ');
-
         if (isset($attributes['class'])) {
-            $newClasses = collect(explode(' ', $attributes['class']));
-            $prefixArray = $newClasses->map(function ($class) {
-                return (string)Str::of($class)->before('-');
-            })->toArray();
-
-            $classes = collect(explode(' ', $classes))->filter(function ($class) use ($prefixArray) {
-                return !Str::of($class)->startsWith($prefixArray);
-            })->merge($newClasses)->join(' ');
+            $this->component->mergeClasses($attributes['class']);
         }
 
-        $attributes['class'] = $classes;
+        $attributes['class'] = $this->component->class();
 
         return $attributes;
     }

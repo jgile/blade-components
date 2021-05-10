@@ -5,7 +5,7 @@ namespace JGile\BladeComponents\Views\Components;
 use Illuminate\View\Component;
 use JGile\BladeComponents\Traits\HasVariants;
 
-class InputErrors extends Component
+class InputError extends Component
 {
     use HasVariants;
 

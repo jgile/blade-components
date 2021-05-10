@@ -2,6 +2,7 @@
 
 namespace JGile\BladeComponents;
 
+use BladeUIKit\Components\Markdown\Markdown;
 use Closure;
 use Illuminate\Support\Facades\Blade;
 use JGile\BladeComponents\Views\Components\Alert;
@@ -12,6 +13,7 @@ use JGile\BladeComponents\Views\Components\Checkbox;
 use JGile\BladeComponents\Views\Components\DatePicker;
 use JGile\BladeComponents\Views\Components\Input;
 use JGile\BladeComponents\Views\Components\InputDescription;
+use JGile\BladeComponents\Views\Components\InputError;
 use JGile\BladeComponents\Views\Components\InputGroup;
 use JGile\BladeComponents\Views\Components\Label;
 use JGile\BladeComponents\Views\Components\MediaItem;
@@ -70,7 +72,7 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 Toggle::class,
                 ValidationErrors::class,
                 InputDescription::class,
-                InputErrors::class,
+                InputError::class,
                 Stack::class,
                 MediaItem::class,
                 StackItem::class,
@@ -81,12 +83,12 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
 
     public function bootingPackage()
     {
-        $this->app->singleton(VariantsManager::class, function () {
-            return new VariantsManager();
+        $this->app->singleton(Variant::class, function () {
+            return new Variant();
         });
 
         Blade::directive('variant', function ($expression) {
-            return "<?php echo app(\JGile\BladeComponents\VariantsManager::class)->get($expression); ?>";
+            return "<?php echo app(\JGile\BladeComponents\Variant::class)->get($expression); ?>";
         });
     }
 }

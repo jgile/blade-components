@@ -1,3 +1,1 @@
-<textarea {{ $attributes }}>
-    {{ $slot }}
-</textarea>
+<textarea {{ $attributes }}>{{ $slot }}</textarea>
