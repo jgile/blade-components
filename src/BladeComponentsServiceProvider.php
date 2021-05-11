@@ -2,9 +2,9 @@
 
 namespace JGile\BladeComponents;
 
-use BladeUIKit\Components\Markdown\Markdown;
-use Closure;
 use Illuminate\Support\Facades\Blade;
+use JGile\BladeComponents\View\Components\Code;
+use JGile\BladeComponents\View\Components\Head;
 use JGile\BladeComponents\Views\Components\Alert;
 use JGile\BladeComponents\Views\Components\Badge;
 use JGile\BladeComponents\Views\Components\Button;
@@ -13,7 +13,7 @@ use JGile\BladeComponents\Views\Components\Checkbox;
 use JGile\BladeComponents\Views\Components\DatePicker;
 use JGile\BladeComponents\Views\Components\Input;
 use JGile\BladeComponents\Views\Components\InputDescription;
-use JGile\BladeComponents\Views\Components\InputError;
+use JGile\BladeComponents\Views\Components\Error;
 use JGile\BladeComponents\Views\Components\InputGroup;
 use JGile\BladeComponents\Views\Components\Label;
 use JGile\BladeComponents\Views\Components\MediaItem;
@@ -62,7 +62,7 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 DatePicker::class,
                 Input::class,
                 InputGroup::class,
-                InputError::class,
+                Error::class,
                 Label::class,
                 NumberStep::class,
                 Radio::class,
@@ -77,6 +77,7 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 StackItem::class,
                 Quill::class,
                 QuillContent::class,
+                Code::class
             ]);
     }
 

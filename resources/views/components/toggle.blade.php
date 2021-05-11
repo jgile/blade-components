@@ -1,4 +1,3 @@
-{{--$initExpression = bindAlpine('on', $attributes->get('x-model'));--}}
 <button
     x-cloak
     x-data="{ on: false }"

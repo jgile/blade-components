@@ -14,15 +14,15 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.4|^8.0",
+        "laravel/framework": "^8.0",
         "spatie/laravel-package-tools": "^1.4.3",
-        "illuminate/contracts": "^8.0"
+        "ext-ctype": "*"
     },
     "require-dev": {
         "orchestra/testbench": "^6.15",
         "pestphp/pest": "^1.0",
         "phpunit/phpunit": "^9.3",
-        "spatie/laravel-ray": "^1.9",
-        "illuminate/view": "^8.0"
+        "spatie/laravel-ray": "^1.9"
     },
     "autoload": {
         "psr-4": {
