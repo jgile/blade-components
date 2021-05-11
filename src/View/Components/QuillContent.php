@@ -1,6 +1,6 @@
 <?php
 
-namespace JGile\BladeComponents\Views\Components;
+namespace JGile\BladeComponents\View\Components;
 
 use DBlackborough\Quill\Render;
 use Exception;

@@ -2,8 +2,6 @@
 
 namespace JGile\BladeComponents\Traits;
 
-use Illuminate\Config\Repository;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Str;
 use Illuminate\View\ComponentAttributeBag;
 use JGile\BladeComponents\AttributeBag;

@@ -1,6 +1,6 @@
 <?php
 
-namespace JGile\BladeComponents\Views\Components;
+namespace JGile\BladeComponents\View\Components;
 
 use JGile\BladeComponents\Traits\HasVariants;
 use Illuminate\View\Component;
@@ -17,9 +17,13 @@ class Error extends Component
     /** @var string */
     public $bag;
 
-    public function __construct(string $for, string $bag = 'default')
+    /** @var bool */
+    public $show = false;
+
+    public function __construct(string $for, string $bag = 'default', bool $show = false)
     {
         $this->for = $for;
+        $this->show = $show;
         $this->bag = $bag;
     }
 

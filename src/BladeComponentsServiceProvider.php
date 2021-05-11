@@ -4,36 +4,37 @@ namespace JGile\BladeComponents;
 
 use Illuminate\Support\Facades\Blade;
 use JGile\BladeComponents\View\Components\Code;
-use JGile\BladeComponents\View\Components\Head;
-use JGile\BladeComponents\Views\Components\Alert;
-use JGile\BladeComponents\Views\Components\Badge;
-use JGile\BladeComponents\Views\Components\Button;
-use JGile\BladeComponents\Views\Components\Card;
-use JGile\BladeComponents\Views\Components\Checkbox;
-use JGile\BladeComponents\Views\Components\DatePicker;
-use JGile\BladeComponents\Views\Components\Input;
-use JGile\BladeComponents\Views\Components\InputDescription;
-use JGile\BladeComponents\Views\Components\Error;
-use JGile\BladeComponents\Views\Components\InputGroup;
-use JGile\BladeComponents\Views\Components\Label;
-use JGile\BladeComponents\Views\Components\MediaItem;
-use JGile\BladeComponents\Views\Components\Modal;
-use JGile\BladeComponents\Views\Components\NumberStep;
-use JGile\BladeComponents\Views\Components\Quill;
-use JGile\BladeComponents\Views\Components\QuillContent;
-use JGile\BladeComponents\Views\Components\Radio;
-use JGile\BladeComponents\Views\Components\Select;
-use JGile\BladeComponents\Views\Components\Select2;
-use JGile\BladeComponents\Views\Components\Spinner;
-use JGile\BladeComponents\Views\Components\Stack;
-use JGile\BladeComponents\Views\Components\StackItem;
-use JGile\BladeComponents\Views\Components\Table;
-use JGile\BladeComponents\Views\Components\Td;
-use JGile\BladeComponents\Views\Components\Th;
-use JGile\BladeComponents\Views\Components\Tr;
-use JGile\BladeComponents\Views\Components\Textarea;
-use JGile\BladeComponents\Views\Components\Toggle;
-use JGile\BladeComponents\Views\Components\ValidationErrors;
+use JGile\BladeComponents\View\Components\Alert;
+use JGile\BladeComponents\View\Components\Badge;
+use JGile\BladeComponents\View\Components\Button;
+use JGile\BladeComponents\View\Components\Card;
+use JGile\BladeComponents\View\Components\Checkbox;
+use JGile\BladeComponents\View\Components\Datepicker;
+use JGile\BladeComponents\View\Components\Html;
+use JGile\BladeComponents\View\Components\Input;
+use JGile\BladeComponents\View\Components\InputDescription;
+use JGile\BladeComponents\View\Components\Error;
+use JGile\BladeComponents\View\Components\InputGroup;
+use JGile\BladeComponents\View\Components\Label;
+use JGile\BladeComponents\View\Components\MediaItem;
+use JGile\BladeComponents\View\Components\Modal;
+use JGile\BladeComponents\View\Components\NumberStep;
+use JGile\BladeComponents\View\Components\Quill;
+use JGile\BladeComponents\View\Components\QuillContent;
+use JGile\BladeComponents\View\Components\Radio;
+use JGile\BladeComponents\View\Components\Select;
+use JGile\BladeComponents\View\Components\Select2;
+use JGile\BladeComponents\View\Components\SocialMeta;
+use JGile\BladeComponents\View\Components\Spinner;
+use JGile\BladeComponents\View\Components\Stack;
+use JGile\BladeComponents\View\Components\StackItem;
+use JGile\BladeComponents\View\Components\Table;
+use JGile\BladeComponents\View\Components\Td;
+use JGile\BladeComponents\View\Components\Th;
+use JGile\BladeComponents\View\Components\Tr;
+use JGile\BladeComponents\View\Components\Textarea;
+use JGile\BladeComponents\View\Components\Toggle;
+use JGile\BladeComponents\View\Components\ValidationErrors;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -59,7 +60,7 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 Badge::class,
                 Button::class,
                 Checkbox::class,
-                DatePicker::class,
+                Datepicker::class,
                 Input::class,
                 InputGroup::class,
                 Error::class,
@@ -77,7 +78,9 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 StackItem::class,
                 Quill::class,
                 QuillContent::class,
-                Code::class
+                Code::class,
+                Html::class,
+                SocialMeta::class
             ]);
     }
 

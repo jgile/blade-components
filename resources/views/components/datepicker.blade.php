@@ -1,12 +1,15 @@
 @once
-    @push('scripts')
+    @push('head')
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    @endpush
+    @push('scripts')
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     @endpush
 @endonce
 <input
-    x-data="{}"
-    x-init="() => flatpickr($el, <?php echo $config ?>)"
+    x-data
+    x-init="() => flatpickr($el, {{ $config }})"
+    name="{{ $name }}"
     type="text"
     {{ $attributes }}
 />

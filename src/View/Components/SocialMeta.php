@@ -1,6 +1,6 @@
 <?php
 
-namespace JGile\BladeComponents\Views\Components;
+namespace JGile\BladeComponents\View\Components;
 
 use Illuminate\View\Component;
 
@@ -41,8 +41,8 @@ class SocialMeta extends Component
         $this->url = $url ?: url()->current();
     }
 
-    public function render(): View
+    public function render()
     {
-        return view('blade-ui-kit::components.layouts.social-meta');
+        return view('blade-components::components.social-meta');
     }
 }
