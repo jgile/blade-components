@@ -81,7 +81,7 @@ return [
         'label' => [
             'base' => 'block text-sm font-medium text-gray-700'
         ],
-        'input-errors' => [
+        'validation-errors' => [
             'base' => 'mt-1 text-sm text-red-600'
         ],
         'error' => [
