@@ -19,7 +19,7 @@
     {{ $attributes->merge(['class' => 'select']) }}
 >
     @if($placeholder !== null)
-        <option value="" selected>{{ $placeholder }}</option>
+        <option value="" disabled selected>{{ $placeholder }}</option>
     @endif
     @if($allow_empty)
         <option value="" selected></option>
