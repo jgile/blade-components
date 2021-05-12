@@ -92,8 +92,10 @@ return [
         'error' => [
             'base' => 'mt-2 text-sm text-red-600'
         ],
-        'input-description' => [
-            'base' => 'mt-1 text-sm text-gray-500'
+        'p' => [
+            'variants' => [
+                'muted' => 'mt-1 text-sm text-gray-500'
+            ],
         ],
         'spinner' => [
             'base' => 'far fa-spinner fa-spin text-gray-900'

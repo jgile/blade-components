@@ -1,5 +1,5 @@
 <div {{ $attributes }}>
-    @if($label)
+    @if($label && $for)
         <x-label :for="$for">
             {{ $label }}
         </x-label>
@@ -8,11 +8,9 @@
         {{ $slot }}
     </div>
     @if($description)
-        <x-input-description>
-            {{ $description }}
-        </x-input-description>
+        <x-p v-muted>{{ $description }}</x-p>
     @endif
     @if($validate)
-        <x-input-error :for="$validate"/>
+        <x-error :for="$validate"/>
     @endif
 </div>

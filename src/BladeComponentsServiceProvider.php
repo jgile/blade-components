@@ -12,13 +12,13 @@ use JGile\BladeComponents\View\Components\Checkbox;
 use JGile\BladeComponents\View\Components\Datepicker;
 use JGile\BladeComponents\View\Components\Html;
 use JGile\BladeComponents\View\Components\Input;
-use JGile\BladeComponents\View\Components\InputDescription;
 use JGile\BladeComponents\View\Components\Error;
 use JGile\BladeComponents\View\Components\InputGroup;
 use JGile\BladeComponents\View\Components\Label;
 use JGile\BladeComponents\View\Components\MediaItem;
 use JGile\BladeComponents\View\Components\Modal;
 use JGile\BladeComponents\View\Components\NumberStep;
+use JGile\BladeComponents\View\Components\P;
 use JGile\BladeComponents\View\Components\Quill;
 use JGile\BladeComponents\View\Components\QuillContent;
 use JGile\BladeComponents\View\Components\Radio;
@@ -53,6 +53,7 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 Alert::class,
                 Spinner::class,
                 Table::class,
+                P::class,
                 Tr::class,
                 Th::class,
                 Td::class,
@@ -72,7 +73,6 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
                 Textarea::class,
                 Toggle::class,
                 ValidationErrors::class,
-                InputDescription::class,
                 Stack::class,
                 MediaItem::class,
                 StackItem::class,
