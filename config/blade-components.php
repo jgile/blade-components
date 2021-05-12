@@ -1,11 +1,6 @@
 <?php
 
 return [
-    /*
-     * Component prefix - default is none.
-     *
-     * 'foo' would result in components like <x-foo-badge></x-foo-badge>
-     */
     'prefix' => '',
     'variant_prefix' => 'v',
     'components' => [
@@ -86,8 +81,8 @@ return [
         'label' => [
             'base' => 'block text-sm font-medium text-gray-700'
         ],
-        'validation_errors' => [
-            'base' => 'text-xs text-red-600'
+        'input-errors' => [
+            'base' => 'mt-1 text-sm text-red-600'
         ],
         'error' => [
             'base' => 'mt-2 text-sm text-red-600'
@@ -99,6 +94,12 @@ return [
         ],
         'spinner' => [
             'base' => 'far fa-spinner fa-spin text-gray-900'
+        ],
+        'card' => [
+            'variants' => [
+                'default' => 'bg-white',
+            ],
+            'base' => 'px-6 py-4 shadow-md sm:rounded-lg'
         ],
         'select2' => [
             'base' => 'mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md',
