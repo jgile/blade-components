@@ -1,12 +1,10 @@
 <div {{ $attributes }}>
     @if($label && $for)
-        <x-label :for="$for">
+        <x-label class="mb-1" :for="$for">
             {{ $label }}
         </x-label>
     @endif
-    <div class="mt-1">
-        {{ $slot }}
-    </div>
+    {{ $slot }}
     @if($description)
         <x-p v-muted>{{ $description }}</x-p>
     @endif
