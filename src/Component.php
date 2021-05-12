@@ -99,8 +99,8 @@ class Component
      */
     public function class()
     {
-        $class = explode(" ", config("$this->configKey.base"));
-        $class = array_combine($class, $class);
+        $classes = explode(" ", config("$this->configKey.base"));
+        $classes = array_combine($classes, $classes);
 
         if (empty($this->variants) && config("$this->configKey.default_variant")) {
             foreach (Arr::wrap(config("$this->configKey.default_variant")) as $var) {
@@ -112,11 +112,15 @@ class Component
             $loaded = config("$this->configKey.variants.$variant");
             $loaded = explode(" ", isset($loaded['class']) ? $loaded['class'] : $loaded);
             foreach ($loaded as $val) {
-                $class[$val] = $val;
+                $classes[$val] = $val;
             }
         }
 
-        return implode(" ", $class);
+        foreach ($this->classes as $class) {
+            $classes[$class] = $class;
+        }
+
+        return implode(" ", $classes);
     }
 
     /**

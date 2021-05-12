@@ -7,8 +7,8 @@
     @php
         $title = $title ?? config('app.name');
     @endphp
-    <title>{{ $title }}</title>
     <x-social-meta :title="$title"/>
+    <title>{{ $title }}</title>
     @stack('head')
 </head>
 <body {{ $attributes }}>
