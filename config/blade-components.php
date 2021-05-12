@@ -3,6 +3,7 @@
 return [
     /*
      * Component prefix - default is none.
+     *
      * 'foo' would result in components like <x-foo-badge></x-foo-badge>
      */
     'prefix' => '',
@@ -65,7 +66,7 @@ return [
             ]
         ],
         'select' => [
-            'base' => 'w-full block border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 rounded-md',
+            'base' => 'w-full block border border-gray-300 appearance-none rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500',
             'default_variant' => 'md',
             'variants' => [
                 'sm' => 'pl-2 py-1 pr-5 text-sm',
