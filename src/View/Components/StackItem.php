@@ -3,11 +3,10 @@
 namespace JGile\BladeComponents\View\Components;
 
 use Illuminate\View\Component;
-use JGile\BladeComponents\ClassCollection;
 
 class StackItem extends Component
 {
-    public ClassCollection $classCollection;
+    public string $classes = '';
 
     public function __construct(
         bool $end = false,
@@ -21,16 +20,25 @@ class StackItem extends Component
         int $nth = null
     )
     {
-        $this->classCollection = new ClassCollection(['flex']);
-        $this->classCollection->pushIf($end, 'self-end');
-        $this->classCollection->pushIf($start, 'self-start');
-        $this->classCollection->pushIf($stretch, 'self-stretch');
-        $this->classCollection->pushIf($center, 'self-center');
-        $this->classCollection->pushIf($grow, 'flex-grow');
-        $this->classCollection->pushIf($shrink, 'flex-shrink');
-        $this->classCollection->pushIf($first, 'order-first');
-        $this->classCollection->pushIf($last, 'order-last');
-        $this->classCollection->pushIf($nth, "order-$nth");
+        $this->classes = 'flex';
+        $this->appendIf($end, 'self-end');
+        $this->appendIf($start, 'self-start');
+        $this->appendIf($stretch, 'self-stretch');
+        $this->appendIf($center, 'self-center');
+        $this->appendIf($grow, 'flex-grow');
+        $this->appendIf($shrink, 'flex-shrink');
+        $this->appendIf($first, 'order-first');
+        $this->appendIf($last, 'order-last');
+        $this->appendIf($nth, "order-$nth");
+    }
+
+    public function appendIf($condition, $class, $default = null)
+    {
+        if ($condition) {
+            $this->classes .= " $class";
+        } elseif ($default) {
+            $this->classes .= " $default";
+        }
     }
 
     public function render()

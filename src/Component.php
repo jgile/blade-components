@@ -3,8 +3,6 @@
 namespace JGile\BladeComponents;
 
 use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
 
 class Component
 {
@@ -25,6 +23,11 @@ class Component
         $this->variant($variant);
     }
 
+    /**
+     * @param string|null $component
+     * @param array|string $variant
+     * @return static
+     */
     public static function make(string $component = null, $variant = [])
     {
         return new static($component, $variant);
@@ -65,7 +68,7 @@ class Component
      *
      * @param null $key
      * @param null $default
-     * @return Repository|Application|mixed
+     * @return string|null
      */
     public function get($key, $default = null)
     {
@@ -96,6 +99,7 @@ class Component
 
     /**
      * Get component class.
+     * @return string
      */
     public function class()
     {
