@@ -13,7 +13,7 @@ class AttributeBag extends ComponentAttributeBag
     /**
      * AttributeBag constructor.
      * @param array $attributes
-     * @param Variant $variantsManager
+     * @param Component|null $component
      */
     public function __construct(array $attributes = [], Component $component = null)
     {
@@ -28,6 +28,7 @@ class AttributeBag extends ComponentAttributeBag
      * Set the component.
      *
      * @param Component $component
+     * @return AttributeBag
      */
     public function component(Component $component)
     {
@@ -40,7 +41,7 @@ class AttributeBag extends ComponentAttributeBag
      * Get variant attribute.
      *
      * @param string|null $key
-     * @return Application|Component|Repository|mixed|string|null
+     * @return Component|string|null
      */
     public function variant(string $key = null)
     {
@@ -99,8 +100,10 @@ class AttributeBag extends ComponentAttributeBag
                 foreach (Arr::wrap($value) as $item) {
                     $this->component->variant((string)Str::of($item)->replace('-', '.'));
                 }
+                unset($attributes['variant']);
             } elseif ($value && Str::of($key)->startsWith($variantPrefix)) {
                 $this->component->variant((string)Str::of($key)->ltrim($variantPrefix)->replace('-', '.'));
+                unset($attributes[$key]);
             }
         }
 

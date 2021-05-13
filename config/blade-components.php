@@ -1,7 +1,6 @@
 <?php
 
 use JGile\BladeComponents\View\Components;
-use JGile\BladeComponents\View\Components\Form;
 
 return [
 
@@ -35,7 +34,7 @@ return [
      */
     'components' => [
         'form' => [
-            'component' => Form::class
+            'component' => Components\Form::class,
         ],
         'form-group' => [
             'component' => Components\FormGroup::class,
@@ -101,8 +100,8 @@ return [
         ],
         'button' => [
             'component' => Components\Button::class,
-            'default_variant' => ['md', 'gray'],
             'base' => 'overflow-hidden relative inline-flex items-center justify-center font-bold border border-transparent shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2',
+            'default_variant' => ['md', 'gray'],
             'variants' => [
                 'secondary' => 'px-6 py-3 text-xs rounded-lg bg-gray-300 text-black hover:bg-gray-400 focus:ring-gray-300 disabled:opacity-50',
                 'primary' => 'px-6 py-3 text-xs rounded-lg bg-purple-300 text-black hover:bg-purple-400 focus:ring disabled:opacity-50',
@@ -145,13 +144,32 @@ return [
                 'muted' => 'mt-1 text-sm text-gray-500'
             ],
         ],
+        'banner' => [
+            'component' => Components\Banner::class,
+            'base' => 'p-2 rounded-lg shadow-lg sm:p-3',
+            'default_variant' => 'green',
+            'variants' => [
+                'blue' => [
+                    'class' => 'bg-blue-600 text-white',
+                    'dismiss' => 'hover:bg-blue-500'
+                ],
+                'red' => [
+                    'class' => 'bg-red-600 text-white',
+                    'dismiss' => 'hover:bg-red-500'
+                ],
+                'green' => [
+                    'class' => 'bg-green-600 text-white',
+                    'dismiss' => 'hover:bg-green-500'
+                ]
+            ],
+        ],
         'code' => [
             'component' => Components\Code::class
         ],
         'card' => [
             'component' => Components\Card::class,
-            'default_variant' => 'white',
             'base' => 'px-6 py-4 shadow-md sm:rounded-lg',
+            'default_variant' => 'white',
             'variants' => [
                 'white' => 'bg-white',
             ],
@@ -161,8 +179,8 @@ return [
         ],
         'badge' => [
             'component' => Components\Badge::class,
-            'default_variant' => 'gray',
             'base' => 'px-2 text-xs inline-flex leading-5 font-semibold rounded-full',
+            'default_variant' => 'gray',
             'variants' => [
                 'blue' => 'bg-blue-100 text-blue-800',
                 'yellow' => 'bg-yellow-100 text-yellow-800',
