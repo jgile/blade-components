@@ -48,7 +48,7 @@ return [
             'base' => 'px-2 text-xs inline-flex leading-5 font-semibold rounded-full'
         ],
         'input' => [
-            'base' => 'w-full bg-white rounded-md border-gray-300 border box-border cursor-text shadow-sm sm:text-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50',
+            'base' => 'w-full bg-white rounded-md border-gray-300 border box-border cursor-text shadow-sm focus:outline-none focus:border-blue-700 focus:ring-blue-700 focus:ring focus:ring-1',
             'default_variant' => 'md',
             'variants' => [
                 'sm' => 'p-1 px-3 text-xs',
@@ -58,6 +58,16 @@ return [
                 'state' => [
                     'error' => 'border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500'
                 ]
+            ]
+        ],
+        'input-group' => [
+            'base' => 'w-full bg-white rounded-md border-gray-300 border box-border cursor-text shadow-sm focus-within:outline-none focus-within:border-blue-700 focus-within:ring-blue-700 focus-within:ring focus-within:ring-1',
+            'default_variant' => 'md',
+            'variants' => [
+                'sm' => 'p-1 px-3 text-xs',
+                'md' => 'py-2 px-3 text-sm',
+                'lg' => 'py-2 px-3  text-lg leading-normal',
+                'xl' => 'py-3 px-3 text-xl leading-normal'
             ]
         ],
         'select' => [
@@ -97,8 +107,9 @@ return [
         ],
         'card' => [
             'variants' => [
-                'default' => 'bg-white',
+                'white' => 'bg-white',
             ],
+            'default_variant' => 'white',
             'base' => 'px-6 py-4 shadow-md sm:rounded-lg'
         ],
         'select2' => [

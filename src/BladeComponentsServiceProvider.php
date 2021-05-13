@@ -10,10 +10,11 @@ use JGile\BladeComponents\View\Components\Button;
 use JGile\BladeComponents\View\Components\Card;
 use JGile\BladeComponents\View\Components\Checkbox;
 use JGile\BladeComponents\View\Components\Datepicker;
+use JGile\BladeComponents\View\Components\Form;
 use JGile\BladeComponents\View\Components\Html;
 use JGile\BladeComponents\View\Components\Input;
 use JGile\BladeComponents\View\Components\Error;
-use JGile\BladeComponents\View\Components\InputGroup;
+use JGile\BladeComponents\View\Components\FormGroup;
 use JGile\BladeComponents\View\Components\Label;
 use JGile\BladeComponents\View\Components\MediaItem;
 use JGile\BladeComponents\View\Components\Modal;
@@ -49,38 +50,49 @@ class BladeComponentsServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->sharesDataWithAllViews('bladeComponentsPrefix', $prefix)
             ->hasViewComponents(config('blade-components.prefix', ''), ...[
-                Modal::class,
-                Alert::class,
-                Spinner::class,
+                
+                // Forms
+                Form::class,
+                FormGroup::class,
+                Label::class,
+                Input::class,
+                Error::class,
+                ValidationErrors::class,
+                Textarea::class,
+                Radio::class,
+                Checkbox::class,
+                Datepicker::class,
+                Select::class,
+                Select2::class,
+                Toggle::class,
+                Button::class,
+                Quill::class,
+                QuillContent::class,
+
+                // Table
                 Table::class,
-                P::class,
                 Tr::class,
                 Th::class,
                 Td::class,
-                Card::class,
-                Badge::class,
-                Button::class,
-                Checkbox::class,
-                Datepicker::class,
-                Input::class,
-                InputGroup::class,
-                Error::class,
-                Label::class,
-                NumberStep::class,
-                Radio::class,
-                Select::class,
-                Select2::class,
-                Textarea::class,
-                Toggle::class,
-                ValidationErrors::class,
-                Stack::class,
-                MediaItem::class,
-                StackItem::class,
-                Quill::class,
-                QuillContent::class,
+                P::class,
+
+                // Display
                 Code::class,
+                Card::class,
+                Modal::class,
+                Badge::class,
+                Alert::class,
+                Spinner::class,
+                MediaItem::class,
+                SocialMeta::class,
+
+                // Layout
                 Html::class,
-                SocialMeta::class
+                Stack::class,
+                StackItem::class,
+
+                // Other
+
             ]);
     }
 
