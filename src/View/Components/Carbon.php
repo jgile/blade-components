@@ -29,7 +29,8 @@ class Carbon extends Component
         string $format = 'Y-m-d H:i:s',
         bool $human = false,
         $local = null
-    ) {
+    )
+    {
         $this->date = CarbonAlias::instance($date);
         $this->format = $format;
         $this->human = $human;
@@ -38,6 +39,6 @@ class Carbon extends Component
 
     public function render(): View
     {
-        return view('blade-ui-kit::components.date-time.carbon');
+        return view('blade-components::components.carbon');
     }
 }

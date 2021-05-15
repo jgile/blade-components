@@ -224,7 +224,7 @@ return [
             'component' => Components\Carbon::class
         ],
         'countdown' => [
-            'countdown' => Components\Countdown::class
+            'component' => Components\Countdown::class
         ]
     ]
 ];

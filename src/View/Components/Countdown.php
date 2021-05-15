@@ -17,8 +17,6 @@ class Countdown extends Component
     /** @var DateTimeInterface */
     public $expires;
 
-    protected static $assets = ['alpine'];
-
     public function __construct(DateTimeInterface $expires)
     {
         $this->id = 'timer-'.Str::random(6);
@@ -27,7 +25,7 @@ class Countdown extends Component
 
     public function render(): View
     {
-        return view('blade-ui-kit::components.date-time.countdown');
+        return view('blade-components::components.countdown');
     }
 
     public function days(): string
