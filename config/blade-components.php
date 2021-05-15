@@ -220,5 +220,11 @@ return [
                 'blue' => ['class' => 'bg-blue-50 text-blue-800', 'icon' => 'fas fa-inverse fa-info', 'icon-bg' => 'fa fa-circle text-blue-400'],
             ]
         ],
+        'carbon' => [
+            'component' => Components\Carbon::class
+        ],
+        'countdown' => [
+            'countdown' => Components\Countdown::class
+        ]
     ]
 ];
