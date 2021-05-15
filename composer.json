@@ -1,6 +1,7 @@
 {
     "name": "jgile/blade-components",
     "description": "Blade Components",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "John Gile",
