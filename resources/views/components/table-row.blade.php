@@ -1,4 +1,4 @@
-<tr class="bg-gray-50">
+<tr dusk="tr" class="bg-gray-50">
     @if($data)
         @foreach($data as $k => $cell)
             <x-td :key="$cell['key']. $k">

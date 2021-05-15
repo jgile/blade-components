@@ -27,11 +27,15 @@
 }
 "
     x-init="startCounter()"
-    {{ $attributes }}
+    {{ $attributes->merge(['class' => 'whitespace-nowrap']) }}
 >
     @if ($slot->isEmpty())
-        <span x-text="timer.days">{{ $days() }}</span> :
-        <span x-text="timer.hours">{{ $hours() }}</span> :
+        @if($days() !== '00')
+            <span x-text="timer.days">{{ $days() }}</span> :
+        @endif
+        @if($hours() !== '00')
+            <span x-text="timer.hours">{{ $hours() }}</span> :
+        @endif
         <span x-text="timer.minutes">{{ $minutes() }}</span> :
         <span x-text="timer.seconds">{{ $seconds() }}</span>
     @else

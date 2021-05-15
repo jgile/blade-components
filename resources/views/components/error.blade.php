@@ -1,5 +1,5 @@
 @if($show)
-    <div {{ $attributes }}>
+    <div dusk="error-{{$for}}" {{ $attributes }}>
         @if ($slot->isEmpty())
             {{ $message }}
         @else
@@ -8,7 +8,7 @@
     </div>
 @else
     @error($for, $bag)
-    <div {{ $attributes }}>
+    <div dusk="error-{{$for}}" {{ $attributes }}>
         @if ($slot->isEmpty())
             {{ $message }}
         @else

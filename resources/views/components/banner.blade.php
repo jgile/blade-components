@@ -1,5 +1,5 @@
 @if($show)
-    <div x-data="{ show: {{ $show ? 'true' : 'false' }} }" x-show="show" class="fixed bottom-0 inset-x-0 pb-2 sm:pb-5">
+    <div dusk="banner" x-data="{ show: {{ $show ? 'true' : 'false' }} }" x-show="show" class="fixed bottom-0 inset-x-0 pb-2 sm:pb-5">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div {{ $attributes }}>
                 <div class="flex items-center justify-between flex-wrap">

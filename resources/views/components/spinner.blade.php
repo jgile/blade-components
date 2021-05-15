@@ -1,1 +1,1 @@
-<span {{ $attributes }}></span>
+<span dusk="spinner" {{ $attributes }}></span>

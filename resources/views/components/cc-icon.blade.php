@@ -11,4 +11,4 @@ $brands = [
     'jcb' => 'fab fa-cc-jcb',
 ];
 ?>
-<i {{ $attributes->merge(['class' => $brands[$brand] ?? 'far fa-credit-card']) }}></i>
+<i dusk="cc-icon" {{ $attributes->merge(['class' => $brands[$brand] ?? 'far fa-credit-card']) }}></i>

@@ -1,4 +1,4 @@
-<div class="flex items-center">
+<div dusk="radio-{{$name}}" class="flex items-center">
     <input
         {{ $attributes }}
         type="radio"

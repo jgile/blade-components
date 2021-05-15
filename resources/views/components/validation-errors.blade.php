@@ -1,5 +1,5 @@
 @if ($errors->any())
-    <div {{ $attributes }}>
+    <div dusk="validation-errors" {{ $attributes }}>
         <ul class="list-disc">
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>

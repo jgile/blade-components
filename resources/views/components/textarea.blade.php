@@ -1,1 +1,1 @@
-<textarea {{ $attributes }}>{{ $slot }}</textarea>
+<textarea dusk="textarea-{{ $attributes->get('name') }}" {{ $attributes }}>{{ $slot }}</textarea>

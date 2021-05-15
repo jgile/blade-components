@@ -1,4 +1,4 @@
-<div {{ $attributes }}>
+<div dusk="alert" {{ $attributes }}>
     <div class="flex">
         <div>
             <span class="fa-stack mt-1" style="font-size: .5em">

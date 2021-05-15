@@ -9,7 +9,7 @@
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
     @endpush
 @endonce
-<div>
+<div dusk="code">
 <pre class="language-{{$language}} block scrollbar-none m-0 p-0 overflow-auto text-white text-sm leading-normal">
 <code class="inline-block p-4 scrolling-touch subpixel-antialiased">{{ $trimCode($slot) }}</code>
 </pre>

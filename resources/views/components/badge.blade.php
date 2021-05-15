@@ -1,3 +1,3 @@
-<span {{ $attributes }}>
+<span dusk="badge" {{ $attributes }}>
     {{ $slot }}
 </span>

@@ -1,4 +1,4 @@
-<div {{ $attributes }}>
+<div dusk="{{ $for ? "form-group-$for" : "form-group" }}" {{ $attributes }}>
     @if($label && $for)
         <x-label class="mb-1" :for="$for">
             {{ $label }}

@@ -7,6 +7,7 @@
     @endpush
 @endonce
 <input
+    dusk="datepicker-{{$name}}"
     x-data
     x-init="() => flatpickr($el, {{ $config }})"
     name="{{ $name }}"

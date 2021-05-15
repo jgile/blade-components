@@ -1,4 +1,6 @@
 @php
+    $id = $id ?? md5($attributes->wire('model'));
+
     switch ($maxWidth ?? '2xl') {
         case 'sm':
             $maxWidth = 'sm:max-w-sm';
@@ -19,6 +21,7 @@
     }
 @endphp
 <div
+    dusk="modal-{{ $id }}"
     x-data="{
         show: @entangle($attributes->wire('model')),
         focusables() {

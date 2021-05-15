@@ -1,4 +1,5 @@
 <button
+    dusk="toggle-{{ $attributes->get('name') }}"
     x-cloak
     x-data="{ on: false }"
     x-init="@bindAlpine('on')"

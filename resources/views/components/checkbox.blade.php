@@ -1,4 +1,4 @@
-<div class="flex items-center">
+<div dusk="{{ $name ? "checkbox-$name" : "checkbox" }}" class="flex items-center">
     <input
         type="checkbox"
         id="{{$id}}"

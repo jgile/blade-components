@@ -14,6 +14,7 @@
     @endpush
 @endonce
 <select
+    dusk="select-{{$name}}"
     id="{{ $id }}"
     name="{{ $name }}"
     {{ $attributes->merge(['class' => 'select']) }}

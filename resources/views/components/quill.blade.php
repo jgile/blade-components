@@ -4,7 +4,7 @@
         <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     @endpush
 @endonce
-<div {{ $attributes->except(['value', 'wire:model', 'x-model']) }}>
+<div dusk="quill" {{ $attributes->except(['value', 'wire:model', 'x-model']) }}>
     @if($attributes->has('wire:model'))
         <div
             wire:ignore

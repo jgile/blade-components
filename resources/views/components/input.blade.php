@@ -1,1 +1,1 @@
-<input name="{{ $name }}" {{ $attributes }} />
+<input dusk="input-{{$name}}" name="{{ $name }}" {{ $attributes }} />
