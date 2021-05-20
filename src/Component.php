@@ -106,17 +106,25 @@ class Component
         $classes = explode(" ", config("$this->configKey.base"));
         $classes = array_combine($classes, $classes);
 
-        if (empty($this->variants) && config("$this->configKey.default_variant")) {
-            foreach (Arr::wrap(config("$this->configKey.default_variant")) as $var) {
-                $this->variants[$var] = $var;
+        // Get default variant
+        if (empty($this->variants)) {
+            if (config()->has("$this->configKey.default_variant")) {
+                foreach (Arr::wrap(config("$this->configKey.default_variant")) as $var) {
+                    $this->variants[$var] = $var;
+                }
+            } elseif (config()->has("$this->configKey.variants.default")) {
+                $this->variants['default'] = 'default';
             }
         }
 
+        // Resolve classes from variants
         foreach ($this->variants as $variant) {
             $loaded = config("$this->configKey.variants.$variant");
-            $loaded = explode(" ", isset($loaded['class']) ? $loaded['class'] : $loaded);
-            foreach ($loaded as $val) {
-                $classes[$val] = $val;
+            if (is_string($loaded)) {
+                $loaded = explode(" ", isset($loaded['class']) ? $loaded['class'] : $loaded);
+                foreach ($loaded as $val) {
+                    $classes[$val] = $val;
+                }
             }
         }
 

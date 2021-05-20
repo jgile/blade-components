@@ -227,6 +227,22 @@ return [
         ],
         'countdown' => [
             'component' => Components\Countdown::class
-        ]
+        ],
+        'tabs' => [
+            'component' => Components\Tabs::class,
+            'variants' => [
+                'default' => 'border-b border-gray-200 flex space-x-8'
+            ]
+        ],
+        'tab' => [
+            'component' => Components\Tab::class,
+            'base' => '-mb-px inline-flex items-center py-2 px-1 border-b-2 font-medium text-sm',
+            'variants' => [
+                'default' => [
+                    'active' => 'border-indigo-500 text-indigo-600',
+                    'inactive' => 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
+                ]
+            ]
+        ],
     ]
 ];
