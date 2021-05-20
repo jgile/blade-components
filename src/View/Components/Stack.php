@@ -25,6 +25,7 @@ class Stack extends Component
         bool $end = false,
         bool $start = false,
         bool $wrap = false,
+        bool $full = false,
         $space = null
     )
     {
@@ -46,6 +47,7 @@ class Stack extends Component
             $this->appendIf($bottom, 'content-end');
         }
 
+        $this->appendIf($full, 'w-full');
         $this->appendIf($wrap, 'flex-wrap');
         $this->appendIf($end, 'items-end');
         $this->appendIf($start, 'items-start');

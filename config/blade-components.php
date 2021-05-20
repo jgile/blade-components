@@ -140,7 +140,9 @@ return [
         ],
         'p' => [
             'component' => Components\P::class,
+            'default_variant' => 'default',
             'variants' => [
+                'default' => 'mb-1',
                 'muted' => 'mt-1 text-sm text-gray-500'
             ],
         ],
@@ -212,12 +214,12 @@ return [
         'alert' => [
             'component' => Components\Alert::class,
             'default_variant' => 'red',
-            'base' => 'w-full rounded-md p-4',
+            'base' => 'w-full rounded-md p-4 text-sm leading-4',
             'variants' => [
-                'red' => ['class' => 'bg-red-50 text-red-800', 'icon' => 'fas fa-inverse fa-exclamation', 'icon-bg' => 'fa fa-circle text-red-400'],
-                'green' => ['class' => 'bg-green-50 text-green-800', 'icon' => 'fas fa-inverse fa-check', 'icon-bg' => 'fa fa-circle text-green-400'],
-                'yellow' => ['class' => 'bg-yellow-50 text-yellow-800', 'icon' => 'fas fa-inverse fa-check', 'icon-bg' => 'fa fa-circle text-yellow-400'],
-                'blue' => ['class' => 'bg-blue-50 text-blue-800', 'icon' => 'fas fa-inverse fa-info', 'icon-bg' => 'fa fa-circle text-blue-400'],
+                'red' => 'bg-red-50 text-red-800',
+                'green' => 'bg-green-50 text-green-800',
+                'yellow' => 'bg-yellow-50 text-yellow-800',
+                'blue' => 'bg-blue-50 text-blue-800',
             ]
         ],
         'carbon' => [
