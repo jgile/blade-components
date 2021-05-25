@@ -3,11 +3,11 @@
     $inactiveClass = $attributes->variant('inactive');
 @endphp
 @if($attributes->has('href'))
-    <a {{ $attributes->merge(['class' => $active ? $activeClass : $inactiveClass]) }}>
+    <a dusk="tab" {{ $attributes->merge(['class' => $active ? $activeClass : $inactiveClass]) }}>
         {{ $slot }}
     </a>
 @else
-    <button {{ $attributes->merge(['class' => $active ? $activeClass : $inactiveClass]) }}>
+    <button dusk="tab" {{ $attributes->merge(['class' => $active ? $activeClass : $inactiveClass]) }}>
         {{ $slot }}
     </button>
 @endif

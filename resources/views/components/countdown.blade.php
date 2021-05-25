@@ -1,6 +1,6 @@
 <div
     x-data="
-{
+    {
     timer: {
         days: '{{ $days() }}',
         hours: '{{ $hours() }}',
