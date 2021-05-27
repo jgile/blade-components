@@ -5,7 +5,7 @@
     @endprepend
 @endonce
 <sl-select
-    {{ $attributes->except('x-model') }}
+    {{ $attributes->except('x-model')->merge(['class' => 'sl-select']) }}
     @if($attributes->has('x-model'))
     x-bind:value="{{ $attributes->get('x-model') }}" x-on:sl-change="{{ $attributes->get('x-model') }}=$event.target.value"
     @elseif($attributes->has('wire:model'))
