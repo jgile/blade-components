@@ -88,6 +88,9 @@ return [
         'datepicker' => [
             'component' => Components\Datepicker::class
         ],
+        'select2' => [
+            'component' => Components\Select2::class,
+        ],
         'select' => [
             'component' => Components\Select::class,
             'base' => 'w-full block border border-gray-300 appearance-none rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500',
