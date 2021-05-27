@@ -8,42 +8,19 @@ use Illuminate\View\Component;
 
 class Select2 extends Component
 {
-    /** @var string */
-    public $name;
-
-    /** @var string */
-    public $id;
-
-    /** @var string */
-    public $type;
-
-    /** @var string */
-    public $value;
-
     /** @var array */
     public $options;
 
-    /** @var mixed|string */
-    public $placeholder;
-
-    /** @var bool */
-    public $allow_empty;
-
-    public function __construct(string $name, string $id = null, string $value = null, $options = null, string $placeholder = null, bool $allowEmpty = false)
+    public function __construct($options = null)
     {
-        $this->placeholder = $placeholder;
         $this->options = $this->resolveOptions($options);
-        $this->name = $name;
-        $this->id = $id ?? $name;
-        $this->allow_empty = $allowEmpty;
-        $this->value = old($name, $value);
     }
 
     protected function resolveOptions($options)
     {
         if (is_array($options)) {
-
             $isAssoc = Arr::isAssoc($options);
+
             if ($isAssoc) {
                 return collect($options)->map(function ($label, $value) {
                     return ['value' => $value, 'label' => $label];
@@ -75,12 +52,6 @@ class Select2 extends Component
 
     }
 
-
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\View\View|string
-     */
     public function render()
     {
         return view("blade-components::components.select2");
