@@ -127,16 +127,20 @@ return [
             'component' => Components\QuillContent::class
         ],
         'table' => [
-            'component' => Components\Table::class
+            'component' => Components\Table::class,
+            'base' => 'table w-full divide-y divide-gray-200',
         ],
         'tr' => [
-            'component' => Components\Tr::class
+            'component' => Components\Tr::class,
+            'base' => 'table-row bg-gray-50',
         ],
         'th' => [
-            'component' => Components\Th::class
+            'component' => Components\Th::class,
+            'base' => 'table-cell px-6 py-3 text-left text-xs font-medium text-gray-800 tracking-wider',
         ],
         'td' => [
-            'component' => Components\Td::class
+            'component' => Components\Td::class,
+            'base' => 'table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-800',
         ],
         'p' => [
             'component' => Components\P::class,

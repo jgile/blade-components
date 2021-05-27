@@ -15,7 +15,7 @@
             </div>
         </div>
     @endif
-    <div class="@if($flush) p-0 @else px-4 py-6 sm:p-6 @endif">
+    <div class="@if(!$flush) px-4 py-6 sm:p-6 @endif">
         {{ $slot }}
     </div>
 </div>

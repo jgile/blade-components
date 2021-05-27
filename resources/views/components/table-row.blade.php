@@ -1,4 +1,4 @@
-<tr dusk="tr" class="bg-gray-50">
+<div dusk="tr" {{ $attributes }}>
     @if($data)
         @foreach($data as $k => $cell)
             <x-td :key="$cell['key']. $k">
@@ -14,4 +14,4 @@
         @endforeach
     @endif
     {{ $slot }}
-</tr>
+</div>
