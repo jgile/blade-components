@@ -7,8 +7,6 @@ use JGile\BladeComponents\Traits\HasVariants;
 
 class Button extends Component
 {
-    use HasVariants;
-
     public bool $loading = false;
 
     public function __construct(bool $loading = false)

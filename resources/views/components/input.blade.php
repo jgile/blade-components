@@ -1,1 +1,1 @@
-<input dusk="input-{{$name}}" name="{{ $name }}" {{ $attributes }} />
+<input dusk="input-{{$name}}" name="{{ $name }}" {{ $attributes->class(['input-component' => true, 'error' => $errors->has($name)])->merge() }} />

@@ -10,8 +10,6 @@ use JGile\BladeComponents\Traits\HasVariants;
 
 class Select extends Component
 {
-    use HasVariants;
-
     protected $configKey = 'blade-components.components.select';
 
     /** @var string */

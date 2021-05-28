@@ -1,12 +1,13 @@
-<div dusk="radio-{{$name}}" class="flex items-center">
+<div dusk="radio-{{$name}}" {{ $attributes->class(['radio-component']) }}>
     <input
-        {{ $attributes }}
+        {{ $attributes->except(['class']) }}
+        class="radio-component-input"
         type="radio"
         id="{{ $id }}"
         name="{{$name}}"
         value="{{$value}}"
     >
-    <label for="{{ $id }}" class="ml-3 block text-sm font-medium text-gray-700">
+    <label for="{{ $id }}" class="radio-component-label">
         {{ $slot }}
     </label>
 </div>

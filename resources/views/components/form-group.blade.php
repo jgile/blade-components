@@ -1,14 +1,14 @@
-<div dusk="{{ $for ? "form-group-$for" : "form-group" }}" {{ $attributes }}>
+<div dusk="{{ $for ? "form-group-$for" : "form-group" }}" {{ $attributes->merge(['class' => 'form-group']) }}>
     @if($label && $for)
-        <x-label class="mb-1" :for="$for">
+        <x-blade-components::label class="form-group-label" :for="$for">
             {{ $label }}
-        </x-label>
+        </x-blade-components::label>
     @endif
     {{ $slot }}
     @if($description)
-        <x-p v-muted>{{ $description }}</x-p>
+        <x-blade-components::p class="muted">{{ $description }}</x-blade-components::p>
     @endif
     @if($validate)
-        <x-error :for="$validate"/>
+        <x-blade-components::error :for="$validate"/>
     @endif
 </div>

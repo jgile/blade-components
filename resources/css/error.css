@@ -1,0 +1,5 @@
+@layer components {
+    .error-component {
+        @apply mt-2 text-sm text-red-600;
+    }
+}

@@ -1,0 +1,25 @@
+@layer components {
+    .alert {
+        @apply w-full rounded-md p-4 text-sm leading-4 bg-red-50 text-red-800;
+    }
+
+    .alert h3 {
+        @apply mb-1 font-bold
+    }
+
+    .alert.red {
+        @apply bg-red-50 text-red-800;
+    }
+
+    .alert.green {
+        @apply bg-green-50 text-green-800;
+    }
+
+    .alert.blue {
+        @apply bg-blue-50 text-blue-800;
+    }
+
+    .alert.yellow {
+        @apply bg-yellow-50 text-yellow-800;
+    }
+}

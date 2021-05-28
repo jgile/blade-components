@@ -1,8 +1,6 @@
-<div dusk="alert" {{ $attributes }}>
+<div dusk="alert" {{ $attributes->merge(['class' => 'alert']) }}>
     @if($title)
-        <h3 class="mb-1 font-bold">
-            {{ $title }}
-        </h3>
+        <h3>{{ $title }}</h3>
     @endif
     {{ $slot ?? '' }}
 </div>

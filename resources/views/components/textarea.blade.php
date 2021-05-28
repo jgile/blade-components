@@ -1,1 +1,1 @@
-<textarea dusk="textarea-{{ $attributes->get('name') }}" {{ $attributes }}>{{ $slot }}</textarea>
+<textarea dusk="textarea-{{ $attributes->get('name') }}" {{ $attributes->merge(['class' => 'textarea-component']) }}>{{ $slot }}</textarea>

@@ -12,17 +12,14 @@ class BladeComponentsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'blade-components');
+
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
             $prefix = config('blade-components.prefix', '');
             foreach (config('blade-components.components') as $alias => $component) {
-                if (isset($component['component'])) {
-                    $blade->component($component['component'], $alias, $prefix);
-                }
+                $blade->component($component, $alias, $prefix);
             }
         });
-        Blade::directive('variant', function ($expression) {
-            return "<?php echo \JGile\BladeComponents\Component::make($expression); ?>";
-        });
+
         Collection::macro('putIf', function ($condition, $key, $value, $elseValue = null) {
             if ($condition) {
                 $this->put($key, $value);
@@ -32,6 +29,7 @@ class BladeComponentsServiceProvider extends ServiceProvider
 
             return $this;
         });
+
         Collection::macro('pushIf', function ($condition, $value, $elseValue = null) {
             if ($condition) {
                 $this->push($value);
@@ -46,6 +44,10 @@ class BladeComponentsServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../config/blade-components.php' => $this->app->configPath('blade-components.php'),
             ], 'blade-components-config');
+
+            $this->publishes([
+                __DIR__ . '/../resources/css' => $this->app->resourcePath('resources/css/blade-components'),
+            ], 'blade-components-css');
 
             $this->publishes([
                 __DIR__ . '/../resources/views' => $this->app->resourcePath('views/vendor/blade-components'),

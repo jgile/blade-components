@@ -7,8 +7,6 @@ use JGile\BladeComponents\Traits\HasVariants;
 
 class Spinner extends Component
 {
-    use HasVariants;
-
     public function render()
     {
         return view("blade-components::components.spinner");

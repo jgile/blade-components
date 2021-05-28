@@ -1,1 +1,1 @@
-<span dusk="spinner" {{ $attributes }}></span>
+<span dusk="spinner" {{ $attributes->merge(['class' => 'far fa-spinner fa-spin spinner']) }}></span>

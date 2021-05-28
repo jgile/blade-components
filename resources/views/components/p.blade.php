@@ -1,1 +1,1 @@
-<p {{ $attributes }}>{{ $slot }}</p>
+<p {{ $attributes->merge(['class' => 'p-component']) }}>{{ $slot }}</p>

@@ -1,6 +1,8 @@
-<div dusk="{{ $name ? "checkbox-$name" : "checkbox" }}" class="flex items-center">
+<div dusk="{{ $name ? "checkbox-$name" : "checkbox" }}" {{ $attributes->merge(['class' => 'checkbox-component']) }}>
     <input
         type="checkbox"
+        class="checkbox-component-input"
+        {{ $attributes->except('class') }}
         id="{{$id}}"
         @if($name)
         name="{{ $name }}"
@@ -8,9 +10,8 @@
         @if($value)
         value="{{ $value }}"
         @endif
-        {{ $attributes }}
     />
-    <label for="{{ $id }}" class="ml-3 block text-sm font-medium text-gray-700">
+    <label for="{{ $id }}" class="checkbox-component-label">
         {{ $slot }}
     </label>
 </div>

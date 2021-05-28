@@ -7,8 +7,6 @@ use JGile\BladeComponents\Traits\HasVariants;
 
 class Alert extends Component
 {
-    use HasVariants;
-
     public string $icon = '';
     public string $title = '';
     public array $list = [];

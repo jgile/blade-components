@@ -7,8 +7,6 @@ use JGile\BladeComponents\Traits\HasVariants;
 
 class Label extends Component
 {
-    use HasVariants;
-
     public $for;
     public $value;
 

@@ -7,8 +7,6 @@ use JGile\BladeComponents\Traits\HasVariants;
 
 class Card extends Component
 {
-    use HasVariants;
-
     public $title;
     public $flush;
 

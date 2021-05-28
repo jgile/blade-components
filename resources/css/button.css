@@ -1,0 +1,65 @@
+@layer components {
+    .button-component {
+        @apply overflow-hidden relative inline-flex items-center justify-center font-bold border border-transparent shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 px-6 py-3 text-xs rounded-lg bg-gray-300 text-black hover:bg-gray-400 focus:ring-gray-300 disabled:opacity-50;
+    }
+
+    .button-component.icon {
+        @apply px-6 py-3 text-xs rounded-lg;
+    }
+
+    .button-component.xs {
+        @apply px-2 py-0 text-xs rounded;
+    }
+
+    .button-component.sm {
+        @apply px-3 py-1 text-xs leading-4 rounded-md;
+    }
+
+    .button-component.md {
+        @apply px-6 py-3 text-xs rounded-lg;
+    }
+
+    .button-component.lg {
+        @apply px-8 py-3 text-sm rounded-lg;
+    }
+
+    .button-component.xl {
+        @apply px-10 py-3 text-base rounded-lg;
+    }
+
+    .button-component.gray {
+        @apply bg-gray-300 text-black hover:bg-gray-400 focus:ring-gray-300 disabled:opacity-50;
+    }
+
+    .button-component.black {
+        @apply bg-black text-white hover:bg-gray-800 focus:ring disabled:opacity-50;
+    }
+
+    .button-component.green {
+        @apply bg-green-600 text-white hover:bg-green-700 focus:ring-green-300 disabled:opacity-50;
+    }
+
+    .button-component.red {
+        @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-300 disabled:opacity-50;
+    }
+
+    .button-component.white {
+        @apply text-base font-bold text-gray-800 bg-white hover:bg-gray-50 border border-2 border-gray-800 disabled:opacity-50 font-bold;
+    }
+
+    .button-component.transparent {
+        @apply text-gray-800 bg-transparent disabled:opacity-50 hover:bg-gray-200;
+    }
+
+    .button-component.link {
+        @apply bg-transparent hover:underline focus:underline disabled:opacity-50;
+    }
+
+    .button-component.secondary {
+        @apply px-6 py-3 text-xs rounded-lg bg-gray-300 text-black hover:bg-gray-400 focus:ring-gray-300 disabled:opacity-50;
+    }
+
+    .button-component.primary {
+        @apply px-6 py-3 text-xs rounded-lg bg-purple-300 text-black hover:bg-purple-400 focus:ring disabled:opacity-50;
+    }
+}

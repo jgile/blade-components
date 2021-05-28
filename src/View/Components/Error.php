@@ -8,8 +8,6 @@ use Illuminate\View\Component;
 
 class Error extends Component
 {
-    use HasVariants;
-
     /** @var string */
     public $for;
 

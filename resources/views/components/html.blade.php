@@ -7,7 +7,7 @@
     <title>{{ $title ?? config('app.name') }}</title>
     @stack('head')
 </head>
-<body {{ $attributes }}>
+<body {{ $attributes->merge(['class' => 'body']) }}>
 {{ $slot }}
 @stack('scripts')
 </body>

@@ -1,4 +1,4 @@
-<div dusk="table" {{ $attributes }}>
+<div dusk="table" {{ $attributes->merge(['class' => 'table-component']) }}>
     @isset($headers)
         <x-tr>
             @foreach($headers as $header)

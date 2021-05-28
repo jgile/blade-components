@@ -1,0 +1,13 @@
+@layer components {
+    .checkbox-component {
+        @apply flex items-center;
+    }
+
+    .checkbox-component input {
+        @apply focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded;
+    }
+
+    .checkbox-component .checkbox-component-label {
+        @apply ml-3 block text-sm font-medium text-gray-700;
+    }
+}

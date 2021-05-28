@@ -1,4 +1,4 @@
-<div dusk="tr" {{ $attributes }}>
+<div dusk="tr" {{ $attributes->merge(['class' => 'table-row-component']) }}>
     @if($data)
         @foreach($data as $k => $cell)
             <x-td :key="$cell['key']. $k">

@@ -1,0 +1,9 @@
+@layer components {
+    .radio-component {
+        @apply flex items-center;
+    }
+
+    .radio-component .radio-component-label{
+        @apply ml-3 block text-sm font-medium text-gray-700;
+    }
+}

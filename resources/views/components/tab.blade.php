@@ -1,13 +1,9 @@
-@php
-    $activeClass = $attributes->variant('active');
-    $inactiveClass = $attributes->variant('inactive');
-@endphp
 @if($attributes->has('href'))
-    <a dusk="tab" {{ $attributes->merge(['class' => $active ? $activeClass : $inactiveClass]) }}>
+    <a dusk="tab" {{ $attributes->class(['tab-component' => true, 'active' => $active])->merge() }}>
         {{ $slot }}
     </a>
 @else
-    <button dusk="tab" {{ $attributes->merge(['class' => $active ? $activeClass : $inactiveClass]) }}>
+    <button dusk="tab" {{ $attributes->class(['tab-component' => true, 'active' => $active])->merge() }}>
         {{ $slot }}
     </button>
 @endif

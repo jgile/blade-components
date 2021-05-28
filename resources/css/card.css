@@ -1,0 +1,21 @@
+@layer components {
+    .card-component {
+        @apply px-6 py-4 shadow-md sm:rounded-lg bg-white;
+    }
+
+    .card-component .card-component-header {
+        @apply px-4 py-3 border-b border-gray-200 sm:px-6;
+    }
+
+    .card-component .card-component-content {
+        @apply px-4 py-6 sm:p-6;
+    }
+
+    .card-component.flush {
+        @apply px-0 py-0;
+    }
+
+    .card-component.flush .card-component-content {
+        @apply px-0 py-0;
+    }
+}

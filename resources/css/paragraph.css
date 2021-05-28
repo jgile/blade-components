@@ -1,0 +1,9 @@
+@layer components {
+    .p-component {
+        @apply mb-1;
+    }
+
+    .p-component.muted {
+        @apply mt-1 text-sm text-gray-500;
+    }
+}
