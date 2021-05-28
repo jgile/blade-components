@@ -46,7 +46,7 @@ class BladeComponentsServiceProvider extends ServiceProvider
             ], 'blade-components-config');
 
             $this->publishes([
-                __DIR__ . '/../resources/css' => $this->app->resourcePath('resources/css/blade-components'),
+                __DIR__ . '/../resources/css' => $this->app->resourcePath('css/blade-components'),
             ], 'blade-components-css');
 
             $this->publishes([
