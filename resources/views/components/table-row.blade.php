@@ -1,16 +1,16 @@
 <div dusk="tr" {{ $attributes->merge(['class' => 'table-row-component']) }}>
     @if($data)
         @foreach($data as $k => $cell)
-            <x-td :key="$cell['key']. $k">
+            <x-blade-components::td :key="$cell['key']. $k">
                 {{ $cell['value'] }}
-            </x-td>
+            </x-blade-components::td>
         @endforeach
     @endif
     @if($headers)
         @foreach($headers as $k => $cell)
-            <x-th :key="$cell['key']. $k">
+            <x-blade-components::th :key="$cell['key']. $k">
                 {{ $cell['value'] }}
-            </x-th>
+            </x-blade-components::th>
         @endforeach
     @endif
     {{ $slot }}

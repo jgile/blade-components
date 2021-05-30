@@ -3,7 +3,7 @@
         {{ $slot }}
         @if($loading)
             <span class="bg-white bg-opacity-75 absolute inset-0 flex items-center justify-center">
-                <x-spinner></x-spinner>
+                <x-blade-components::spinner></x-blade-components::spinner>
             </span>
         @endif
     </a>
@@ -12,7 +12,7 @@
         {{ $slot }}
         @if($loading)
             <span class="bg-white bg-opacity-75 absolute inset-0 flex items-center justify-center">
-                <x-spinner></x-spinner>
+                <x-blade-components::spinner></x-blade-components::spinner>
             </span>
         @endif
     </button>

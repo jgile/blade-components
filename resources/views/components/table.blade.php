@@ -1,10 +1,10 @@
 <div dusk="table" {{ $attributes->merge(['class' => 'table-component']) }}>
     @isset($headers)
-        <x-tr>
+        <x-blade-components::tr>
             @foreach($headers as $header)
                 <x-th>{{ $header }}</x-th>
             @endforeach
-        </x-tr>
+        </x-blade-components::tr>
     @else
         @isset($thead)
             {{ $thead }}
